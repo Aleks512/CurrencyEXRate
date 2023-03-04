@@ -5,5 +5,5 @@ from devises.views import dashboard
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('days=<int:days_range>&currencies=<str:currencies>', dashboard, name='dashboard')
+    path('days=<int:user_delta>&currencies=<str:user_devise>', dashboard, name='dashboard')
 ]

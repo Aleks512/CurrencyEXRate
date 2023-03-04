@@ -4,7 +4,7 @@ import requests
 
 # Le but de api est de fournir la structure de données suivantes :
 # # un dico avec comme la clef la devise et en valeur la liste de valeurs de cette devise pour chaque jour dans l'ordre
-def get_rates(currencies, days=30):
+def get_rates(currencies, days):
     end_date = date.today()
     start_date = end_date - timedelta(days=days)
     symbols = ','.join(currencies)
@@ -30,10 +30,9 @@ def get_rates(currencies, days=30):
         #print(api_rates.get(day)) #{'EUR': 1, 'PLN': 4.718084}
         [all_rates[currency].append(rates) for currency, rates in api_rates[day].items()]
 
-
     return all_days, all_rates
 
 if __name__=='__main__':
-    days, rates = get_rates(currencies = ["CAD", "USD"])
-    # pprint(days)
-    # pprint(rates)
+    days, rates = get_rates(currencies = ["CAD", "USD"], days=30)
+    pprint(days)
+    pprint(rates)

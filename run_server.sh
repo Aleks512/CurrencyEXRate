@@ -1,0 +1,1 @@
+C:\\Users\\aleks\\PycharmProjects\\CurrencyEXRate\\venv\\Scripts\\python.exe C:\\Users\\aleks\\PycharmProjects\\CurrencyEXRate\\manage.py runserver
