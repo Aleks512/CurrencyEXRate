@@ -10,6 +10,14 @@
 </head>
 <body class="bg-dark">
     <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+            <h1 class="text-white">Tableau de bord - {{ days_label }}</h1>
+            <a href="{% url 'dashboard' user_delta=7 user_devise=user_devise_btn %}" class="btn btn-secondary">Semaine</a>
+            <a href="{% url 'dashboard' user_delta=30 user_devise=user_devise_btn %}" class="btn btn-secondary">Mois</a>
+            <a href="{% url 'dashboard' user_delta=365 user_devise=user_devise_btn %}" class="btn btn-secondary">Année</a>
+            </div>
+        </div>
         <div class="row justify-content-center">
             {% for currency, rate in data.items %}
             <div class="col-md-10 col-lg-6">
