@@ -13,9 +13,9 @@
         <div class="row">
             <div class="col">
             <h1 class="text-white">Tableau de bord - {{ days_label }}</h1>
-            <a href="{% url 'dashboard' user_delta=7 user_devise=user_devise_btn %}" class="btn {% if days_label == 'Semaine' %} btn-info {% else %}btn-secondary{% endif %}">Semaine</a>
-            <a href="{% url 'dashboard' user_delta=30 user_devise=user_devise_btn %}" class="btn {% if days_label == 'Mois' %}btn-info {% else %} btn-secondary {% endif %}">Mois</a>
-            <a href="{% url 'dashboard' user_delta=365 user_devise=user_devise_btn %}" class="btn {% if days_label == 'Année' %}btn-info{% else %} btn-secondary {% endif %}">Année</a>
+            <a href="{% url 'dashboard' user_delta=7 user_devise=user_devise_btn %}" class="btn {% if days_label == 'Semaine' %} btn-primary {% else %}btn-secondary{% endif %}">Semaine</a>
+            <a href="{% url 'dashboard' user_delta=30 user_devise=user_devise_btn %}" class="btn {% if days_label == 'Mois' %}btn-primary {% else %} btn-secondary {% endif %}">Mois</a>
+            <a href="{% url 'dashboard' user_delta=365 user_devise=user_devise_btn %}" class="btn {% if days_label == 'Année' %}btn-primary{% else %} btn-secondary {% endif %}">Année</a>
 
             </div>
         </div>
@@ -37,8 +37,14 @@
                     label:"{{ currency }}",
                     data: {{ rate | safe}},
                     fill: true,
+                    borderJoinStyle:"round",
                     borderColor:'rgb(255, 128, 128)',
                     borderWidth: 1,
+                    trendlineLinear :{
+                        colorMin: "#0000E5",
+		                colorMax: "#0000E5",
+                        width:1,
+                    }
                 }]
             }
         });
